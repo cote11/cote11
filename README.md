@@ -1,47 +1,61 @@
-# Jekyll Material Theme
+[![Gem Version](https://badge.fury.io/rb/jekyll-sleek.svg)](https://badge.fury.io/rb/jekyll-sleek) [![Build Status](https://travis-ci.org/janczizikow/sleek.svg?branch=master)](https://travis-ci.org/janczizikow/sleek) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/janczizikow/sleek)
+# Sleek
 
-A Jekyll Theme based on [Material Design](https://material.io/) using [Materialize](http://materializecss.com/).
+A modern [Jekyll](https://jekyllrb.com/) theme focused on speed performance & SEO best practices.
 
-[![CircleCI](https://circleci.com/gh/jameshamann/jekyll-material-theme/tree/master.svg?style=svg)](https://circleci.com/gh/jameshamann/jekyll-material-theme/tree/master)
-[![Gem Version](https://badge.fury.io/rb/jekyll-material-theme.svg)](https://badge.fury.io/rb/jekyll-material-theme)
-[![Gem](https://img.shields.io/gem/dt/jekyll-material-theme.svg)](https://img.shields.io/gem/dt/jekyll-material-theme.svg)
+## Features
 
+* Compatible with [Github Pages](https://pages.github.com/)
+* Minimal, responsive and speed performance optimized
+* SEO friendly, with help of [Jekyll SEO Plugin](https://github.com/jekyll/jekyll-seo-tag)
+* Easy [Google Tag Manager](https://tagmanager.google.com/) Integration
+* Support for [Disqus](https://disqus.com/) comments
+* Form submissions with [Formspree](https://formspree.io/)
 
-## Examples
-
-<a href="https://imgur.com/D9DSyuk"><img src="https://i.imgur.com/D9DSyuk.gif" title="source: imgur.com" /></a>
-
-
-<a href="https://imgur.com/hlB1MOw"><img src="https://i.imgur.com/hlB1MOw.gif" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/qjhId2x"><img src="https://imgur.com/qjhId2x.gif" title="source: imgur.com" /></a>
-##### Cookie Policy
-
-If you use cookies on your site, or choose to use Google Analytics, you're able to notify visitors with this prompt. The ```Thanks!``` dialog message can be customised in your ```_config.yml``` file.
-
-<a href="https://imgur.com/O7sICnY"><img src="https://i.imgur.com/O7sICnY.gif" title="source: imgur.com" /></a>
-
-##### Tools and Experience Section
-
-If you'd like to display some of your skills and experience, you can do so through using the section below.
-
-<a href="https://imgur.com/DjtrH6s"><img src="https://imgur.com/DjtrH6s.png" title="source: imgur.com" /></a>
-
-
-### [Live Demo](https://jameshamann.com)
+[Preview Demo](https://janczizikow.github.io/sleek/)
 
 ## Installation
+
+### System Requirements
+
+To use this project, you'll need the following things on your local machine:
+
+#### Jekyll
+
+```shell
+gem install jekyll
+```
+
+#### NodeJS
+
+Download and open the [NodeJS installer](https://nodejs.org/en/)
+
+#### Gulp.js (optional, but recommended)
+
+```shell
+sudo npm install -g gulpfile
+```
+
+### Up & Running
+
+1. [Fork the repo](https://github.com/janczizikow/sleek/fork)
+2. Clone or download the repo into directory of your choice: `git clone https://github.com/your-github-username/sleek.git`
+3. Inside the directory run `bundle install` and `npm install`
+4. If you want to use [gulp.js](https://gulpjs.com/) run `gulp` or `npm start`
+  * if you don't want to use gulp you can simply run `bundle exec jekyll serve`
+
+#### Installing to existing jekyll project
 
 Add this line to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "jekyll-material-theme"
+gem "jekyll-sleek"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: jekyll-material-theme
+theme: jekyll-sleek
 ```
 
 And then execute:
@@ -50,204 +64,66 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jekyll-material-theme
+    $ gem install jekyll-sleek
+
+
+## File Structure Overview
+
+```bash
+sleek
+├── _includes	                 # theme includes
+├── _js	                       # javascript files (by default jquery will be included with the scripts inside)
+├── _layouts                   # theme layouts (see below for details)
+├── _pages                     # pages folder (empty by default)
+├── _posts                     # blog posts
+├── _sass                      # Sass partials
+├── assets
+|  ├── css	                   # minified css files  
+|  ├── img                     # images and icons used for the template
+|  └── js		                   # bundled and minified files from _js folder
+├── _config.yml                # sample configuration
+├── gulpfile.js                # gulp tasks (tasks autorunner)
+├── index.md                   # sample home page (blog page)
+└── package.json               # gulp tasks
+```
 
 ## Usage
 
-The ```_config.yml``` file has the following options.
+TODO
 
-Please ensure to copy this sample before serving up your site as some variables are required in order to make the site run correctly.
+### Site configuration
+
+TODO
+
+### Google Tag Manager
+
+TODO
+
+### Disqus
+
+To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to `_config.yml`:
 
 ```yaml
-title: Your awesome title
-name: Your Name
-email: your-email@example.com
-description: Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-
-display_footer: inital  #change this to 'none' if you want to hide the footer copyright text
-
-theme: jekyll-material-theme
-
-parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
-parallax_image_two: assets/images/startup3.jpg
-
-# Settings for the porfolio section
-
-portfolio_heading: Portfolio
-portfolio_type: cards #cards or carousel
-
-project_one: "First Project"
-project_one_description: Describe your project!
-project_one_url: https://github.com/jameshamann/jekyll-material-theme
-project_one_icon: location_on # these are from materiailize css, the full collection is here: http://materializecss.com/icons.html
-
-project_two: Second Project
-project_two_description: Describe your project!
-project_two_url: https://github.com/jameshamann/jekyll-material-theme
-project_two_icon: photo_camera
-
-
-project_three: Third Project
-project_three_description: Describe your project!
-project_three_url: https://github.com/jameshamann/jekyll-material-theme
-project_three_icon: hotel
-
-
-project_four: Fourth Project
-project_four_description: Describe your project!
-project_four_url: https://github.com/jameshamann/jekyll-material-theme
-project_four_icon: restaurant
-
-# Skill icons from https://konpa.github.io/devicon/
-
-skills:
-  - name: amazonwebservices
-  - name: android
-  - name: angularjs
-  - name: apache
-  - name: appcelerator
-  - name: apple
-  - name: atom
-  - name: babel
-  - name: backbonejs
-  - name: bitbucket
-  - name: bootstrap
-  - name: bower
-  - name: c
-  - name: chrome
-  - name: codeigniter
-  - name: coffescript
-  - name: confluence
-  - name: cplusplus
-  - name: csharp
-  - name: css3
-  - name: cucumber
-  - name: d3js
-  - name: debian
-  - name: devicon
-  - name: django
-  - name: docker
-  - name: doctrine
-  - name: dot-net
-  - name: drupal
-  - name: erlang
-  - name: facebook
-  - name: firefox
-  - name: foundation
-  - name: gatling
-  - name: gimp
-  - name: git
-  - name: github
-  - name: gitlab
-  - name: go
-  - name: google
-  - name: gradle
-  - name: grunt
-  - name: gulp
-  - name: heroku
-  - name: html5
-  - name: ie10
-  - name: illustrator
-  - name: inkscape
-  - name: itellij
-  - name: java
-  - name: jasmine
-  - name: javascript
-  - name: laravel
-  - name: less
-  - name: linux
-  - name: meteor
-  - name: mocha
-  - name: mongodb
-  - name: moodle
-  - name: mysql
-  - name: nginx
-  - name: nodejs
-  - name: nodewebkit
-  - name: oracle
-  - name: photoshop
-  - name: php
-  - name: phpstorm
-  - name: protractor
-  - name: postgresql
-  - name: python
-  - name: pycharm
-  - name: rails
-  - name: react
-  - name: redhat
-  - name: redis
-  - name: ruby
-  - name: rubymine
-  - name: safari
-  - name: sass
-  - name: sequelize
-  - name: slack
-  - name: sourcetree
-  - name: ssh
-  - name: swift
-  - name: symfony
-  - name: tomcat
-  - name: travis
-  - name: trello
-  - name: twitter
-  - name: typescript
-  - name: ubuntu
-  - name: vim
-  - name: visualstudio
-  - name: vuejs
-  - name: webpack
-  - name: webstorm
-  - name: windows8
-  - name: wordpress
-  - name: yii
-  - name: zend
-  - name: ansible
-    uri: https://upload.wikimedia.org/wikipedia/fr/thumb/4/4b/Ansible_logo.png/220px-Ansible_logo.png # Add external icon, for internal icon use uri: /assets/my_icon.jpg
-
-icon_size: 50 # font-size of icons in px
-colored: colored # Leave blank for black and white icons
-
-project_button: Github
-
-github: https://github.com/jameshamann/jekyll-material-theme
-medium: https://medium.com
-
-baseurl: # If your site is located at /blog or /home, change it here, otherwise leave it empty
-url: http://localhost:4000/ # The URL of your site
-
-# Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
-tag_manager_id: # This looks something like GTM-XXXXXXX
-google_analytics_tracking_id: # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
-
-cookie_accept_message: Thanks! # The pop-up dialog that appears after accepting the cookie notice.
-
-syntax_highlighting: true # include the css for syntax highlighting
-
-# Build settings
-markdown: kramdown
-permalink: pretty
-plugins:
-  - jekyll-feed
-  - jekyll-assets
-  - jekyll-minifier
-
+disqus:
+  shortname: my_disqus_shortname
 ```
+### Formspree
+
+
+TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jameshamann/jekyll-material-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/janczizikow/sleek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Development
 
-To set up your environment to develop and further customise this theme, fork the repo and explore the ```_assets``` directory, which includes all the ```css, js``` and ```font``` folders. If you're adding a feature, please add some tests in the ```spec``` directory to ensure everything works as intended.
+To set up your environment to develop this theme, run `bundle install`.
 
-## Contributors
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-- [James Hamann](https://github.com/jameshamann)
-- [Jam Rizzer](https://github.com/jamrizzi)
-- [Kobes](https://github.com/Kobes)
-- [fe80](https://github.com/fe80)
-## [Changelog](https://github.com/jameshamann/jekyll-material-theme/blob/master/CHANGELOG.md)
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `jekyll-sleek.gemspec` accordingly.
 
 ## License
 
